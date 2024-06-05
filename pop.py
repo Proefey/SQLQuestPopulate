@@ -96,7 +96,7 @@ with engine.begin() as connection:
         connection.execute(sqlalchemy.text(
             """
             INSERT INTO quest_ledger (char_id, quest_id, complete)
-            VALUES (:char, :quest, false)
+            VALUES (:char, :quest, true)
             """), {'char': random.randint(first_character_id, last_character_id),
                    'quest': random.randint(first_quest_id, last_quest_id)})
     
